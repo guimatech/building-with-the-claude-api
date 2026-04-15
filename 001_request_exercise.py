@@ -31,17 +31,17 @@ def chat(messages):
 
 def main():
     messages = []
+    while True:
+        user_input = input("> ")
+        print(">", user_input)
 
-    add_user_message(messages, "Define quantum computing in one sentence")
-    answer = chat(messages)
-    print(answer)
+        add_user_message(messages, user_input)
+        answer = chat(messages)
+        add_assistant_message(messages, answer)
+        print("---")
+        print(answer)
+        print("---")
 
-    add_assistant_message(messages, answer)
-    print(messages)
-
-    add_user_message(messages, "Write another sentence")
-    answer = chat(messages)
-    print(answer)
 
 if __name__ == "__main__":
     main()
