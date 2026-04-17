@@ -1,4 +1,4 @@
-from common import add_user_message, add_assistant_message, chat
+from common import add_user_message, chat
 
 def math_tutor_test():
     messages = []
