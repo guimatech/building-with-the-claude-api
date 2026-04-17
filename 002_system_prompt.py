@@ -1,6 +1,6 @@
 from common import add_user_message, add_assistant_message, chat
 
-def main():
+def math_tutor_test():
     messages = []
     system = """
         You are a patient math tutor.
@@ -13,6 +13,22 @@ def main():
     print("---")
     print(answer)
     print("---")
+
+
+def python_dev_test():
+    messages = []
+    system = """
+        You are a Python engineer who writes very concise code.
+        """
+    
+    add_user_message(messages, "Write a Python function that checks a string for duplicate characters.")
+    answer = chat(messages, system=system)
+    print("---")
+    print(answer)
+    print("---")
+
+def main():
+    python_dev_test()
 
 
 if __name__ == "__main__":
