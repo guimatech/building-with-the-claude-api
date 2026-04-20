@@ -6,7 +6,7 @@ load_dotenv()
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC")
 
-model = "claude-sonnet-4-6"
+model = "claude-opus-4-1"
 client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 def add_user_message(messages, text):
@@ -21,7 +21,7 @@ def add_assistant_message(messages, text):
         "content": text
     })
 
-def chat(messages, system=None, temperature=1.0):
+def chat(messages, system=None, temperature=0.5, stop_sequences=None):
     params = {
         "model": model,
         "max_tokens": 1024,
@@ -30,5 +30,8 @@ def chat(messages, system=None, temperature=1.0):
     }
     if system:
         params["system"] = system
+    if stop_sequences:
+        params["stop_sequences"] = stop_sequences
+
     message = client.messages.create(**params)
     return message.content[0].text
