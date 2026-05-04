@@ -1,4 +1,4 @@
-from common import client, model, add_user_message, chat
+from acessing_claude_with_the_api.common import client, model, add_user_message, chat
 
 def main():
     messages = []

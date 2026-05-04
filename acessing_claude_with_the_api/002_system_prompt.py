@@ -1,4 +1,4 @@
-from common import add_user_message, chat
+from acessing_claude_with_the_api.common import add_user_message, chat
 
 def math_tutor_test():
     messages = []
